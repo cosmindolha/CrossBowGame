@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<!-- NMML reference: https://gist.github.com/1763850 -->
+	
+	<!-- metadata, make sure 'package' is at least 3 segments (ie. com.mycompany.myproject) -->
+	<meta title="Anim" package="Anim" version="1.0.0" company="Cosmin Dolha" />
+	
+	<!-- output -->
+	<app main="Main" file="Anim" path="bin" swf-version="12.0" />
+	
+	<window background="#000000" fps="60" />
+	<window width="1080" height="1920" unless="mobile" />
+	<window orientation="portrait" vsync="true" antialiasing="0" if="cpp" />
+	<window fullscreen="true" />
+	<!-- classpath, haxe libs -->
+	<source path="src" />
+	<haxelib name="openfl" />
+	<haxelib name="actuate" />
+	
+	<!-- assets -->
+	<icon path="assets/openfl.svg" />
+	<assets path="assets/img" rename="img" />
+	<library path="assets/anim.bundle/library.swf" preload="true" generate="true" />
+
+	<haxeflag name="-dce full" />
+	<haxedef name="webgl" if="html5" />
+	<!-- optimize output
+	<haxeflag name="-dce full" /> -->
+	
+</project>
